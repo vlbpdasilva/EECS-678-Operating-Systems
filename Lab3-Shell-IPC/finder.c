@@ -53,6 +53,8 @@ int main(int argc, char *argv[])
 		close(fd3[0]);
 		close(fd3[1]);
 
+		// Initialize char-array with desired command
+
 		char *const myArr[] = {BASH_EXEC, "-c",cmdbuf, (char *) 0};
 
 		if(execv(BASH_EXEC, myArr) < 0)
@@ -87,6 +89,8 @@ int main(int argc, char *argv[])
 		close(fd2[1]);
 		close(fd3[0]);
 		close(fd3[1]);
+
+		// Initialize char-array with desired command
 
 		char *const myArr[] = {BASH_EXEC, "-c",cmdbuf, (char *) 0};
 
@@ -124,6 +128,8 @@ int main(int argc, char *argv[])
 		close(fd3[0]);
 		close(fd3[1]);
 
+		// Initialize char-array with desired command
+
 		char *const myArr[] = {BASH_EXEC, "-c",cmdbuf, (char *) 0};
 
 		if(execv(BASH_EXEC, myArr) < 0)
@@ -158,6 +164,8 @@ int main(int argc, char *argv[])
 		close(fd2[1]);
 		close(fd3[1]);
 
+		// Initialize char-array with desired command
+
 		char *const myArr[] = {BASH_EXEC, "-c",cmdbuf, (char *) 0};
 
 		if(execv(BASH_EXEC, myArr) < 0)
@@ -168,6 +176,8 @@ int main(int argc, char *argv[])
 
 		exit(0);
 	}
+
+	// Finally close all pipes (read+write)
 
 	close(fd1[0]);
 	close(fd1[1]);
